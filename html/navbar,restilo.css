@@ -1,0 +1,148 @@
+*{
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+
+}
+
+.navbar, .offcanvas-body{
+
+background-color: #1a1b1c;
+
+}
+
+
+.imagenLogo{
+
+width: 90px;
+
+transition: all (0.3s);
+
+}
+.imagenLogo:hover{
+transform: scale(1.1);
+
+}
+
+.tituloPagina{
+color: white;
+text-decoration: underline rgb(79, 129, 136); 
+font-weight: bold;
+
+}
+
+.navbar-brand{
+
+    display: flex;
+    align-items: center;
+}
+
+h5{
+text-decoration: underline rgb(79, 129, 136);
+
+
+}
+
+
+
+.botonLogin{
+
+background-color: rgb(79, 129, 136);
+color: white;
+
+font-size: 17px;
+font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+
+    /* efecto cuando acerco el cursor */
+    transition: all 0.3s;
+
+}
+
+.botonLogin:hover{
+transform: scale(1.1);
+
+background-color:white ;
+color: rgb(79, 129, 136) ;
+border: 1px solid rgb(79, 129, 136) ;
+
+}
+
+/* HAMBURGUESA */
+.navbar-toggler{
+
+border: none;
+font-size: 1.25rem;
+
+
+}
+
+
+.navbar-toggler:focus, .btn-close:focus{
+
+box-shadow: none;
+outline: none;
+
+}
+
+.nav-link{
+
+color: white;
+font-weight: bold;
+
+font-size: 20px;
+position: relative;
+
+
+}
+.nav-link:hover{
+
+color: rgb(79, 129, 136);
+
+}
+
+.nav-link:focus{
+color:rgb(79, 129, 136) ;
+
+}
+
+
+/* media preMOBILE */
+@media(min-width:991px){
+.nav-link::before{
+
+content: "";
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 0%;
+height: 2px;
+background-color: white;
+visibility: hidden;
+transition:0.3s ease-in-out;
+
+}
+
+.nav-link:hover:before, .nav-link:focus::before{
+    
+width: 100%;
+visibility: visible;
+
+}
+
+.container-fluid{
+
+justify-content: center;
+align-items: center;
+
+}
+
+
+}
+
+

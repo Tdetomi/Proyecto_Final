@@ -1,0 +1,808 @@
+/* AJUSTAR ANCHO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* NAVBAR */
+
+header {
+
+
+
+    display: flex;
+    flex-direction: row;
+    /* que se separen los elementos hijos entre si con space-between */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d1b1c;
+    padding: 30px 15px;
+
+    height: 100px;
+    font-family: sans-serif;
+
+}
+
+.logos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+
+    color: white;
+    text-decoration: underline rgb(79, 129, 136);
+
+
+}
+
+
+.logo {
+
+    width: 100px;
+    padding: 10px;
+    cursor: pointer;
+    /* efecto transition */
+    transition: all 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+
+}
+
+.navLink {
+    /* saco las vinietas de los li */
+    list-style: none;
+
+
+    justify-content: center;
+    cursor: pointer;
+
+
+
+}
+
+/* para darle estilo a la etiqueta li y a al mismo tiempo pongo: li, a */
+
+
+li,
+.links {
+    /* para que esten en la misma linea uso display inline-block */
+    display: inline-block;
+
+    padding: 0 15px;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+
+    /* efecto transition */
+    transition: all 0.3s;
+
+
+}
+
+li,
+.links:hover {
+    transform: scale(1.1);
+
+
+}
+
+
+.login {
+
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: rgb(79, 129, 136);
+    border-radius: 50px;
+    /* para los bordes del fondo del boton */
+    padding: 10px 20px;
+
+    /* para que no quede pegado al margen */
+    margin-right: 10px;
+
+    /* efecto cuando acerco el cursor */
+    transition: all 0.3s;
+
+}
+
+.login:hover {
+    transform: scale(1.1);
+    color: rgb(79, 129, 136);
+    background-color: white;
+
+}
+
+/* EFECTO para cuando clickeas */
+
+.login:active {
+
+    background-color: rgb(86, 83, 83);
+    color: wheat;
+}
+
+
+/* BOTON DE WHATSAPP */
+
+.logoWpp {
+
+    width: 70px;
+    background-color: #104b53;
+    padding: 10px;
+    border-radius: 20px 10px;
+
+
+
+    /* para que quede FLOTANDO FIJO en la pagina uso position:fixed 
+y lo ubico con bottom:20px y rigth:20px*/
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+
+    /* EFECTO TRANSITION */
+    transition: all 0.3s;
+
+}
+
+.logoWpp:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+
+/* MAIN */
+
+.contenedorPagina {
+    display: grid;
+    width: auto;
+    padding: 0;
+    margin-top: 100px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-areas:
+        "publicidad1 publicidad1 "
+        "galeria galeria"
+    
+        "info infoMaps"
+    ;
+}
+
+.publicidad1 {
+
+    display: flex;
+    background-color: rgb(205, 203, 203);
+    height: 400px;
+    grid-area: publicidad1;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+
+
+}
+
+
+.textoPublicidad {
+
+    width: 500px;
+    padding-bottom: 20px;
+
+
+}
+
+.imagenPubli {
+
+    width: 400px;
+    height: 300px;
+
+}
+
+
+.tituloPublicidad {
+    font-size: 40px;
+    /* linkeado en el html con google fonts */
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.parrafoPublicidad {
+
+    /* linkeado en el html con google fonts */
+    font-family: 'Poppins', sans-serif;
+
+}
+
+/* MINI CATALOGO */
+
+.galeria{
+    grid-area: galeria  ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background);
+    gap: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;    
+    }
+    
+.card{
+    
+    position: relative;
+    left: 0px;
+    width: 250px;
+    height: 250px;
+    margin-top: 40px;
+    background-color: none;
+    border-radius: 8px;
+    transition:all 1000ms;
+    transform-origin: center left;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    color: transparent;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    
+    }
+    
+    .card:hover{
+    
+    cursor: pointer;
+    transform: scale(1.15);
+    }
+    
+    
+.card img{
+    
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+    
+    
+    }
+    
+.card:hover figcaption{
+    
+    font-size: 15px;
+    position: absolute;
+    height: 80px;
+    width: 250px;
+    display: flex;
+    align-items: end;
+    background: linear-gradient(to top, rgba(0,0,0,0.9)  , rgba(0,0,0,0) );
+    color: white;
+    left: 0px;
+    bottom: 0px;
+    padding-left: 12px;
+    padding-bottom: 10px;
+    
+    } 
+
+
+
+
+/* INFORMACION main */
+.info {
+    display: block;
+    grid-area: info;
+    padding-top: 40px;
+    padding-left: 75px;
+
+    margin-bottom: 60px;
+
+
+
+
+}
+
+.info h2 {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: underline;
+
+}
+
+.infoTexto {
+
+    font-family: 'Poppins', sans-serif;
+    
+
+}
+
+.infoMaps {
+grid-area: infoMaps;
+    padding-left: 80px;
+    padding-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TIENDA */
+
+/* CARDS, PRODUCTOS SISTEMA CON GRID */
+
+.contenedorCards {
+    /* ACTIVO EL GRID AL CONTENEDOR PADRE */
+    display: grid;
+    /* cantindad de columnas, con reapet pongo 4veces 1fraccion */
+    grid-template-columns: repeat(4, 1fr);
+    /* separo los productos con el gap */
+    gap: 30px;
+
+    margin-top: 125px;
+}
+
+.producto {
+
+    /* ACTIVO FLEX PARA LOS PRODUCTOS */
+    display: flex;
+    /* Acomodo como columnas */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 25px;
+    margin-top: 20px;
+
+    /* le doy sombra a la card */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+/* estilizo las cards */
+
+.imagenProducto {
+
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+}
+
+.tituloProducto {
+    color: #2c8f9c;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.descripcionProducto {
+    color: #2c8f9c;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+
+}
+
+.precioProducto {
+
+    color: #2c8f9c;
+    font-size: 1.7rem;
+    font-family: sans-serif;
+
+
+}
+
+.botonComprar {
+
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #1d1b1c;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+
+    /* efecto transition */
+    transition: all 0.1s;
+
+}
+
+.botonComprar:hover {
+
+    transform: scale(1.1);
+    color: white;
+    background-color: #2c8f9c;
+
+}
+
+main {
+
+    padding: 0 200px;
+
+}
+
+
+/*:::::Pie de Pagina*/
+
+footer {
+
+    margin-top: 0;
+    font-family: sans-serif;
+
+}
+
+.pie-pagina {
+    width: 100%;
+    background-color: #1d1b1c;
+}
+
+.pie-pagina .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img {
+    width: 250px;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p {
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.pie-pagina .grupo-1 .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #0d2033;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover {
+    color: aqua;
+}
+
+.pie-pagina .grupo-2 {
+    background-color: dimgray;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+}
+
+
+
+/* CONTACTO */
+
+.bodyContacto {
+
+    font-family: 'Poppins', sans-serif;
+    background-color: #555764;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    
+
+
+}
+
+
+.contenidoFormulario {
+
+    background: linear-gradient(50deg,
+            rgba(40, 42, 55, 1) 50%,
+            rgba(40, 42, 55, 0.7)),
+        url(../img/Termo\ fondo\ 1000x700.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+    width: 1000px;
+    border-radius: 25px;
+    
+    
+
+ 
+
+    margin-top: 150px;
+    margin-bottom: 40px;
+
+
+
+
+}
+
+
+.contenidoFormulario h2 {
+
+    color: #f4f6f9;
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+
+}
+
+.formulario {
+
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 20px;
+
+}
+
+label {
+
+    font-size: 17px;
+    color: #959aab;
+    margin-bottom: 10px;
+
+}
+
+input, textarea {
+
+    padding: 17px 14px;
+    background-color: #333646;
+    border: 0;
+    font-size: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+
+
+}
+
+input:focus {
+
+    outline: 1px solid #1e92e9;
+
+
+}
+
+.boton {
+    background-color: rgb(99, 171, 181);
+    width: 150px;
+    align-self: flex-end;
+    cursor: pointer;
+
+    transition: all 0.2s;
+}
+
+.boton:hover {
+    transform: scale(1.1);
+
+    background-color: rgb(79, 129, 136);
+
+}
+
+@media (max-width:991px) {
+
+    .contenidoFormulario {
+
+      
+        width: 100%;
+    }
+
+    .formulario {
+        margin: 0;
+        width: 100%;
+    }
+
+
+}
+
+
+
+/* Media clular */
+
+@media screen and (max-width:800px) {
+    .pie-pagina .grupo-1 {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}
+
+
+
+
+.navbar, .offcanvas-body{
+
+    background-color: #1a1b1c;
+    
+    }
+    
+    
+    .imagenLogo{
+    
+    width: 90px;
+    
+    transition: all (0.3s);
+    
+    }
+    .imagenLogo:hover{
+    transform: scale(1.1);
+    
+    }
+    
+    .tituloPagina{
+    color: white;
+    text-decoration: underline rgb(79, 129, 136); 
+    font-weight: bold;
+    
+    }
+    
+    .navbar-brand{
+    
+        display: flex;
+        align-items: center;
+    }
+    
+    h5{
+    text-decoration: underline rgb(79, 129, 136);
+    
+    
+    }
+    
+    
+    
+    .botonLogin{
+    
+    background-color: rgb(79, 129, 136);
+    color: white;
+    
+    font-size: 17px;
+    font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        padding: 8px 20px;
+        border-radius: 50px;
+    
+        /* efecto cuando acerco el cursor */
+        transition: all 0.3s;
+
+        margin-right: 20px;
+    
+    }
+    
+    .botonLogin:hover{
+    transform: scale(1.1);
+    
+    background-color:white ;
+    color: rgb(79, 129, 136) ;
+    border: 1px solid rgb(79, 129, 136) ;
+    
+    }
+    
+    /* HAMBURGUESA */
+    .navbar-toggler{
+    
+    border: none;
+    font-size: 1.25rem;
+    
+    
+    }
+    
+    
+    .navbar-toggler:focus, .btn-close:focus{
+    
+    box-shadow: none;
+    outline: none;
+    
+    }
+
+    .offcanvas-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1040;
+        width: 100vw;
+        height: 1000vh;
+        background-color: #000;
+    }
+    
+    .nav-link{
+    
+    color: white;
+    font-weight: bold;
+    
+    font-size: 20px;
+    position: relative;
+    
+    
+    }
+    .nav-link:hover{
+    
+    color: rgb(79, 129, 136);
+    
+    }
+    
+    .nav-link:focus{
+    color:rgb(79, 129, 136) ;
+    
+    }
+    
+    
+    /* media preMOBILE */
+    @media(min-width:991px){
+    .nav-link::before{
+    
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    visibility: hidden;
+    transition:0.3s ease-in-out;
+    
+    }
+    
+    .nav-link:hover:before, .nav-link:focus::before{
+        
+    width: 100%;
+    visibility: visible;
+    
+    }
+    
+    .container-fluid{
+    
+    justify-content: center;
+    align-items: center;
+    
+    }
+    
+    
+    }
