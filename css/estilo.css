@@ -480,14 +480,9 @@ main {
         gap: 30px;
         justify-content: center;
         align-items: center;
-    grid-template-areas: 
-    
-    ;
+   
         margin-top: 125px;
 
-        grid-template-areas: 
-        
-        ;
     }
     .slider{
         display: none;
@@ -511,9 +506,7 @@ main {
     
         margin-top: 125px;
 
-        grid-template-areas: 
-        
-        ;
+  
     }
     .slider{
         display: none;
