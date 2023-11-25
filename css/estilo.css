@@ -170,7 +170,9 @@ y lo ubico con bottom:20px y rigth:20px*/
     grid-template-columns: repeat(2, 1fr);
 
     grid-template-areas:
+    
         "publicidad1 publicidad1 "
+        "slider slider"
         "galeria galeria"
     
         "info infoMaps"
@@ -367,8 +369,11 @@ grid-area: infoMaps;
     grid-template-columns: repeat(4, 1fr);
     /* separo los productos con el gap */
     gap: 30px;
+    justify-content: center;
+    align-items: center;
 
     margin-top: 125px;
+    margin-bottom: 30px;
 }
 
 .producto {
@@ -453,6 +458,60 @@ main {
     padding: 0 200px;
 
 }
+
+/* TIENDA MEDIA */
+
+@media (min-width:572px) and (max-width:800px){
+
+    .contenedorCards {
+        /* ACTIVO EL GRID AL CONTENEDOR PADRE */
+        display: grid;
+        /* cantindad de columnas, con reapet pongo 4veces 1fraccion */
+        grid-template-columns: repeat(3, 1fr);
+        /* separo los productos con el gap */
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+    grid-template-areas: 
+    "publicidad1 publicidad1 publicidad1"
+    "slider slider slider"
+    "galeria galeria galeria"
+    ;
+        margin-top: 125px;
+
+        grid-template-areas: 
+        
+        ;
+    }
+
+
+
+}
+
+@media (max-width:572px){
+
+    .contenedorCards {
+        /* ACTIVO EL GRID AL CONTENEDOR PADRE */
+        display: grid;
+        /* cantindad de columnas, con reapet pongo 4veces 1fraccion */
+        grid-template-columns: repeat(2, 1fr);
+        /* separo los productos con el gap */
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+    
+        margin-top: 125px;
+
+        grid-template-areas: 
+        
+        ;
+    }
+}
+
+
+
+
+
 
 
 /*:::::Pie de Pagina*/
@@ -646,6 +705,17 @@ input:focus {
     .formulario {
         margin: 0;
         width: 100%;
+    }
+
+
+}
+
+@media (max-width:674px){
+
+    .contenidoFormulario {
+
+      
+        width: 300px;
     }
 
 
@@ -911,4 +981,48 @@ display: none;
 
 
 
+    }
+
+    /* SLIDER */
+
+
+
+    .slider {
+    grid-area: slider;
+        height: auto ;
+        margin: auto;
+        overflow: hidden;
+        background-color: rgb(77, 76, 76);
+    }
+    
+    .slider .slide-track {
+        display: flex;
+    
+        animation: scroll 40s linear infinite;
+        -webkit-animation: scroll 40s linear infinite;
+        width: calc(200px * 14);
+    }
+    
+    
+    
+    
+    .slider .slide {
+        width: 200px;
+    }
+    
+    .slider .slide img {
+        width: 100%;
+        
+    }
+    
+    
+    @keyframes scroll {
+        0% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+        100% {
+            -webkit-transform: translateX(calc(-200px * 7));
+            transform: translateX(calc(-200px * 7));
+        }
     }
