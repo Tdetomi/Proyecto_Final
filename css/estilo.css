@@ -336,6 +336,13 @@ grid-area: infoMaps;
     padding-top: 50px;
 }
 
+@media (min-width:800px) and (max-width:1400px){
+.slider{
+    display: none;
+}
+
+}
+
 
 
 
@@ -467,21 +474,22 @@ main {
         /* ACTIVO EL GRID AL CONTENEDOR PADRE */
         display: grid;
         /* cantindad de columnas, con reapet pongo 4veces 1fraccion */
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         /* separo los productos con el gap */
         gap: 30px;
         justify-content: center;
         align-items: center;
     grid-template-areas: 
-    "publicidad1 publicidad1 publicidad1"
-    "slider slider slider"
-    "galeria galeria galeria"
+    
     ;
         margin-top: 125px;
 
         grid-template-areas: 
         
         ;
+    }
+    .slider{
+        display: none;
     }
 
 
@@ -506,6 +514,10 @@ main {
         
         ;
     }
+    .slider{
+        display: none;
+    }
+    
 }
 
 
@@ -989,6 +1001,7 @@ display: none;
 
     .slider {
     grid-area: slider;
+    width: 100%;
         height: auto ;
         margin: auto;
         overflow: hidden;
