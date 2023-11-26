@@ -6,6 +6,8 @@ box-sizing: border-box;
 }
 
 
+a{color: black;
+background-color: black;}
 .slider {
     
     height: auto ;
